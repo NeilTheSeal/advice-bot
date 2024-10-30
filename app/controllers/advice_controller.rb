@@ -1,5 +1,5 @@
 class AdviceController < ApplicationController
   def index
-    p params
+    p params[:text]
   end
 end
