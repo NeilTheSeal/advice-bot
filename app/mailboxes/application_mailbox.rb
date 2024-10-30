@@ -4,6 +4,6 @@ end
 
 class ReceiverMailbox < ApplicationMailbox
   def process
-    p mail
+    p params
   end
 end
