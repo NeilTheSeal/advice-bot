@@ -1,3 +1,9 @@
 class ApplicationMailbox < ActionMailbox::Base
-  # routing /something/i => :somewhere
+  routing all: :receiver
+end
+
+class ReceiverMailbox < ApplicationMailbox
+  def process
+    p mail
+  end
 end
