@@ -3,7 +3,7 @@ class AdviceMailer < ApplicationMailer
     @advice = advice
     mail(
       to: @advice.email,
-      subject: "Advice from Neil",
+      subject: @advice.subject,
       from: "advice@neilhendren.com",
       reply_to: "no-reply@neilhendren.com",
       content_type: "text/html"
