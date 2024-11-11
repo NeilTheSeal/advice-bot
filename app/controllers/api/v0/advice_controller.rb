@@ -14,7 +14,7 @@ class Api::V0::AdviceController < ApplicationController
 
     outgoing_email = incoming_email.create_outgoing_email!(
       email: from,
-      subject: "My response to your advice request",
+      subject: "Re: #{subject}",
       content:
     )
 
