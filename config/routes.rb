@@ -7,5 +7,9 @@ Rails.application.routes.draw do
 
   get "test", to: "health#index"
 
-  post "advice", to: "advice#index"
+  namespace "api" do
+    namespace "v0" do
+      post "/advice", to: "advice#index"
+    end
+  end
 end
