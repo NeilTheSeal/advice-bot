@@ -1,12 +1,8 @@
-require "json"
-
 class Api::V0::AdviceController < ApplicationController
   def index
-    email_info = JSON.parse(request.body.read, symbolize_names: true)
-
-    from = email_info[:from][/[^<]*@[^>]*/, 0]
-    subject = email_info[:subject]
-    content = email_info[:text]
+    from = params[:from][/[^<]*@[^>]*/, 0]
+    subject = params[:subject]
+    content = params[:text]
 
     incoming_email = IncomingEmail.create!(
       from:,
